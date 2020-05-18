@@ -1,7 +1,14 @@
+const input = document.querySelector("input");
+const inputV = document.getElementById("input");
+const h1 = document.querySelector("h1");
+const img = document.querySelector(".img");
+// console.log(inputV.value);
 const number = "5193080150954111";
+
 let splitNumberArr;
 let newArr = [];
 let sumArr = [];
+let result;
 const splitNumber = (number) => {
   const splitNum = [...number];
   splitNumberArr = splitNum;
@@ -23,20 +30,50 @@ const splitNumber = (number) => {
       sumArr.push(newArr[i]);
     }
   }
+  result = sumArr
+    .map((i) => {
+      return Number(i);
+    })
+    .reduce((a, b) => a + b);
   return;
 };
-splitNumber(number);
-// console.log(newArr);
 
-let result = sumArr
-  .map((i) => {
-    return Number(i);
-  })
-  .reduce((a, b) => a + b);
+console.log(result % 10);
 
-console.log(result);
-if (!(result % 10)) {
-  console.log(`card is valid`);
-} else {
-  console.log(`card is not valid`);
-}
+const changeInputValue = () => {
+  let inputNumber = inputV.value + "";
+  if (
+    inputNumber.length === 15 ||
+    inputNumber.length === 13 ||
+    inputNumber.length === 16
+  ) {
+    splitNumber(inputV.value);
+    if (!(result % 10) && result != undefined) {
+      h1.textContent = "Card is Valid";
+      console.log(`card is valid`);
+      switch (inputNumber.length) {
+        case 15:
+          img.src = `img/MasterCard.svg`;
+          break;
+        case 16:
+          img.src = `img/Visa.png`;
+          break;
+        case 13:
+          img.src = `img/AmericanExpress.jpg`;
+          break;
+        default:
+          img.src = "";
+      }
+    } else {
+      h1.textContent = "Card is not Valid";
+      img.src = ``;
+
+      console.log(`card is not valid`);
+    }
+  } else {
+    h1.textContent = "wrong number";
+  }
+  console.log(result);
+};
+
+input.addEventListener("change", changeInputValue);
