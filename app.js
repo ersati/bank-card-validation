@@ -31,6 +31,7 @@ const splitNumber = (number) => {
     }
   }
   result = sumArr
+    .filter((elem) => elem !== undefined)
     .map((i) => {
       return Number(i);
     })
