@@ -5,8 +5,10 @@ body {
     object-fit: fill;
 }
 
-h1 {
-    color: white
+h1,
+h2 {
+    color: white;
+    text-align: center;
 }
 
 .wrapper {
