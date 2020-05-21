@@ -67,12 +67,13 @@ const changeInputValue = () => {
       }
     } else {
       h1.textContent = "Card is not Valid";
-      img.src = ``;
+      img.src = "";
 
       console.log(`card is not valid`);
     }
   } else {
     h1.textContent = "wrong number";
+    img.src = "";
   }
   console.log(result);
 };
