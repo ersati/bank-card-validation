@@ -1,10 +1,39 @@
+body {
+    background-image: url(https://images.unsplash.com/photo-1550565360-6986a92b7169?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: fill;
+}
+
+h1 {
+    color: white
+}
+
 .wrapper {
+    margin-top: 50px;
     display: flex;
     text-align: center;
     align-items: center;
     flex-direction: column;
 }
 
+
 .img {
     max-width: 65%;
+}
+
+.btn {
+    border: 1px solid black;
+    border-radius: 25%;
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.btn--x {
+    background-color: orangered;
+}
+
+.btn--ok {
+    background-color: green;
+
 }

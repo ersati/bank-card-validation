@@ -2,7 +2,8 @@ const input = document.querySelector("input");
 const inputV = document.getElementById("input");
 const h1 = document.querySelector("h1");
 const img = document.querySelector(".img");
-// console.log(inputV.value);
+const btnX = document.querySelector(".btn--x");
+const btnOk = document.querySelector(".btn--ok");
 const number = "5193080150954111";
 
 let splitNumberArr;
@@ -77,5 +78,11 @@ const changeInputValue = () => {
   }
   console.log(result);
 };
-
+function clearInput() {
+  input.value = "";
+  h1.textContent = "";
+  img.src = "";
+}
 input.addEventListener("change", changeInputValue);
+btnOk.addEventListener("change", changeInputValue);
+btnX.addEventListener("click", clearInput);
